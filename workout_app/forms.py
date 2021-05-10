@@ -18,6 +18,6 @@ class RoutineForm(FlaskForm):
     #Routine Name
     name = StringField('Name', validators=[DataRequired()])
     #TODO: I want the choices to be a list of the pre-existing workouts already stored in the datavse.
-    exercise = SelectField('Exercise 1', choices)
+    exercise = SelectField('Exercise 1', choices=[('Test','Test2')])
     #List of Exercises One to Many or Many to Many
     #Book & Genre exercise will help!
