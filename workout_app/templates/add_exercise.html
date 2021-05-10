@@ -1,0 +1,43 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+
+<form method="POST" action="{{ url_for('main.add_exercise') }}">
+    {{ form.csrf_token }}
+    <fieldset>
+        <legend>Create an exercise</legend>
+
+        {{ form.name.label }}
+        {{ form.name }}
+        <ul>
+        {% for error in form.name.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+        </ul>
+        <!--I just want it to show the list of body parts to choose from!-->
+        {{ form.bodyPart.label }}
+        <div class="form-group input-group">
+            {% for bodyPart in form.bodyPart %}
+                {{ bodyPart }}
+            {% endfor %}
+        </div>
+        <ul>
+        {% for error in form.bodyPart.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+        </ul>
+        
+        {{ form.cateogry.label }}
+        {{ form.cateogry }}
+        <ul>
+        {% for error in form.cateogory.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+        </ul>
+        
+            
+        {{ form.submit }}
+    </fieldset>
+</form>
+
+{% endblock %}
