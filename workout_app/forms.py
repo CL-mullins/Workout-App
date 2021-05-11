@@ -9,9 +9,12 @@ class ExerciseForm(FlaskForm):
     #Exercise name
     name = StringField('Name', validators=[DataRequired()])
     #Body part worked
-    bodyPart = SelectField('Type', choices=[('Core','Arms','Back','Chest','Legs','Shoulders','Other','Full Body', 'Cardio')])
+    bodyPart = SelectField('Body Part', choices=[('Core','Core'),('Arms','Arms'),('Back','Back'),('Chest','Chest'),('Legs','Legs'),('Shoulders','Shoulders'),('Other','Other'),('Olympic','Olypmic'),('Full Body','Full Body'),('Cardio','Cardio')])
     #Type of exercise
-    category = SelectField('Category', choices=[('Barbell','Dumbbell','Machine/Other','Weighted Bodyweight','Assisted Bodyweight','Reps Only','Cardio','Duration')])
+    category = SelectField('Category', choices=[('Barbell','Barbell'),('Dumbbell','Dumbell'),('Machine/Other','Machine/Other'),('Weighted Bodyweight','Weighted Bodyweight'),('Assisted Bodyweight','Assisted Bodyweight'),('Reps Only','Reps Only'),('Cardio','Cardio'),('Duration','Duration')])
+    submit = SubmitField('Submit')
+
+#Access the data held within Exercise form
 
 class RoutineForm(FlaskForm):
     """Form for adding a new routine"""

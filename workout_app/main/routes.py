@@ -25,8 +25,8 @@ def add_exercise():
     if form.validate_on_submit():
         new_exercise = Exercise(
         name=form.name.data,
-        bodypart=form.bodyPart.data,
-        cateogry=form.cateogry.data
+        bodyPart=form.bodyPart.data,
+        category=form.category.data
         )
         db.session.add(new_exercise)
         db.session.commit()

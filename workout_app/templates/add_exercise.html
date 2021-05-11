@@ -14,28 +14,18 @@
             <li class="error">{{ error }}</li>
         {% endfor %}
         </ul>
-        <!--I just want it to show the list of body parts to choose from!-->
         {{ form.bodyPart.label }}
-        <div class="form-group input-group">
-            {% for bodyPart in form.bodyPart %}
-                {{ bodyPart }}
-            {% endfor %}
-        </div>
+        {{ form.bodyPart }}
         <ul>
         {% for error in form.bodyPart.errors %}
             <li class="error">{{ error }}</li>
         {% endfor %}
         </ul>
+        {{ form.category.label }}
+        {{ form.category }}
         
-        {{ form.cateogry.label }}
-        {{ form.cateogry }}
-        <ul>
-        {% for error in form.cateogory.errors %}
-            <li class="error">{{ error }}</li>
-        {% endfor %}
-        </ul>
+        <!--Show a submit button!-->
         
-            
         {{ form.submit }}
     </fieldset>
 </form>
