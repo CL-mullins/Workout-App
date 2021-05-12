@@ -9,6 +9,9 @@ class Exercise(db.Model):
     name = db.Column(db.String(80), nullable=False)
     bodyPart = db.Column(db.String(80), nullable=False)
     category = db.Column(db.String(80), nullable=False)
+
+    def __repr__(self):
+        return self.name
     #If I want pounds and reps to be contingent on the type of category, make nullable set to true.
     #I want to hide certain form fields (FrontEnd work)
     #If i want to reject information on back end i could use a validator to reject form based on category.
@@ -18,6 +21,7 @@ class Routine(db.Model):
     """Routine Model"""
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
+    exercise1 = db.Column(db.String(80), nullable=False)
     #How do I set up a many to many exercise routine
 
 class User(UserMixin, db.Model):

@@ -36,13 +36,18 @@ def add_exercise():
 
 
 
-
-    pass
-
 @main.route('/create_routine', methods=['GET', 'POST'])
 @login_required
 def create_routine():
     form = RoutineForm()
-    #TODO: Figure out ER of Routine
+    
+    if form.validate_on_submit():
+        new_routine = Routine(
+            name=form.exercise.data,
+            exercise=form.exercise.data
+        )
+        db.session.add(new_routine)
+        db.session.commit()
 
-    pass
+        flash('Routine created successfully')
+    return render_template('create_routine.html', form=form)

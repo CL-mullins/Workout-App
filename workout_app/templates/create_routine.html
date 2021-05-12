@@ -1,0 +1,30 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+
+<form method="POST" action="{{ url_for('main.create_routine') }}">
+    {{ form.csrf_token}}
+    <fieldset>
+        <legend>Create a Routine</legend>
+
+        {{ form.name.label }}
+        {{ form.name }}
+        <ul>
+            {% for error in form.name.errors %}
+                <li class="error">{{ error }}</li>
+            {% endfor %}
+            </ul>
+            {{ form.exercise.label }}
+            {{ form.exercise }}
+            <ul>
+            {% for error in form.exercise.errors %}
+                <li class="error">{{ error }}</li>
+            {% endfor %}
+            </ul>
+            <!--Show a submit button!-->
+            
+            {{ form.submit }}
+    </fieldset>
+</form>
+
+{% endblock %}
