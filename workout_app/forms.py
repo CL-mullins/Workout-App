@@ -24,7 +24,7 @@ class RoutineForm(FlaskForm):
     #Routine Name
     name = StringField('Name', validators=[DataRequired()])
     #TODO: I want the choices to be a list of the pre-existing workouts already stored in the datavse.
-    exercise = QuerySelectMultipleField('Exercise',
+    exercises = QuerySelectMultipleField('Exercise',
         query_factory=lambda: Exercise.query)
     submit = SubmitField('Submit')
     #List of Exercises One to Many or Many to Many

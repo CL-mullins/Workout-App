@@ -43,8 +43,8 @@ def create_routine():
     
     if form.validate_on_submit():
         new_routine = Routine(
-            name=form.exercise.data,
-            exercise=form.exercise.data
+            name=form.name.data,
+            exercises=form.exercises.data
         )
         db.session.add(new_routine)
         db.session.commit()
